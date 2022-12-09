@@ -173,7 +173,7 @@ class Ui_Form2(object):
         
     def guardar_venta(self):
         _translate = QtCore.QCoreApplication.translate
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         cursor1= conn.cursor()
         cursor2 = conn.cursor()
