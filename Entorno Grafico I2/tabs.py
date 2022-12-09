@@ -883,7 +883,7 @@ class Ui_Form(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), _translate("Form", "Empleado"))
 
     def mostrar_stock(self):
-          conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+          conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
           cursor = conn.cursor()
           query = '''SELECT * FROM stock order by IDproducto'''
           cursor.execute(query)
@@ -902,7 +902,7 @@ class Ui_Form(object):
         
         
     def mostrar_distribuidor(self):
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor = conn.cursor()
         query = '''SELECT * FROM distribuidor order by IDdistribuidor'''
         cursor.execute(query)
@@ -920,7 +920,7 @@ class Ui_Form(object):
         conn.close()
 
     def mostrar_empleado(self):
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor = conn.cursor()
         query = '''SELECT * FROM empleado order by IDempleado'''
         cursor.execute(query)
@@ -938,7 +938,7 @@ class Ui_Form(object):
         conn.close()
 
     def mostrar_sucursal(self):
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor = conn.cursor()
         query = '''SELECT * FROM sucursal order by IDsucursal'''
         cursor.execute(query)
@@ -956,7 +956,7 @@ class Ui_Form(object):
     
     def buscar_por_ID(self):
         _translate = QtCore.QCoreApplication.translate
-        conn= psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn= psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         query= "SELECT * FROM stock WHERE idproducto=%s"
         codigo=self.LineEditBuscarStock.text()
@@ -980,7 +980,7 @@ class Ui_Form(object):
         
     def agregar_producto(self):
         _translate = QtCore.QCoreApplication.translate
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         cursor1= conn.cursor()
         cursor2= conn.cursor()
@@ -1025,7 +1025,7 @@ class Ui_Form(object):
         
     def modificar_producto(self):
         _translate = QtCore.QCoreApplication.translate
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         cursor1= conn.cursor()
         cursor2= conn.cursor()
@@ -1073,7 +1073,7 @@ class Ui_Form(object):
 
     def agregar_distribuidor(self):
         _translate = QtCore.QCoreApplication.translate
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         cursor1= conn.cursor()
         query= '''INSERT INTO distribuidor(nombredistribuidor, correo, telefono, direccion) VALUES (%s, %s, %s, %s)'''
@@ -1104,7 +1104,7 @@ class Ui_Form(object):
         
     def eliminar_distribuidor(self):
         _translate = QtCore.QCoreApplication.translate
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         cursor1= conn.cursor()
         query= '''DELETE FROM distribuidor where iddistribuidor=%s'''
@@ -1128,7 +1128,7 @@ class Ui_Form(object):
         
     def agregar_empleado(self):
         _translate = QtCore.QCoreApplication.translate
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         query= '''INSERT INTO empleado(nombreempleado,edad,sueldo,sucursal) VALUES (%s, %s, %s, %s)'''
         
@@ -1153,7 +1153,7 @@ class Ui_Form(object):
 
     def eliminar_empleado(self):
         _translate = QtCore.QCoreApplication.translate
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         cursor1= conn.cursor()
         query= '''DELETE FROM empleado where idempleado=%s'''
@@ -1176,7 +1176,7 @@ class Ui_Form(object):
 
     def buscar_sucursal_por_ID(self):
         _translate = QtCore.QCoreApplication.translate
-        conn= psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn= psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         query= "SELECT * FROM tiene WHERE idsucursal=%s"
         codigo=self.BuscarSucursalID.text()
@@ -1198,7 +1198,7 @@ class Ui_Form(object):
         conn.close()
     
     def agregar_ventas(self):
-        conn= psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn= psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         query= '''INSERT INTO venta(hora, total, cantidad) VALUES (current_timestamp, 0, 0)'''
         cursor.execute(query,)
@@ -1210,7 +1210,7 @@ class Ui_Form(object):
         self.ventas.show()
     
     def mostrar_ventas(self):
-        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn = psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor = conn.cursor()
         query = '''SELECT * FROM venta order by IDventa'''
         cursor.execute(query)
@@ -1228,7 +1228,7 @@ class Ui_Form(object):
 
     def buscar_venta_ID(self):
         _translate = QtCore.QCoreApplication.translate
-        conn= psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="chimales12", host="localhost", port="5432")
+        conn= psycopg2.connect(dbname="IluminacionResidencial", user="postgres", password="admin", host="localhost", port="5432")
         cursor= conn.cursor()
         query= "SELECT * FROM venta WHERE idventa=%s"
         codigo=self.BuscarVendaID.text()
